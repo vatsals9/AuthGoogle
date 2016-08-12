@@ -42,19 +42,18 @@ module.exports = function(passport) {
             // try to find the user based on their google id
             User.findOne({ 'google.id' : profile.id }, function(err, user) {
                 
-
-
-
-
+                
                 if (err)
                     return done(err);
 
-                if (user) {
+                if (user ) {
 
                     // if a user is found, log them in
                     return done(null, user);
                 } else {
                     // if the user isnt in our database, create a new user
+
+
                     var newUser          = new User();
 
                     // set all of the relevant information

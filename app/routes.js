@@ -36,6 +36,8 @@ module.exports = function(app, passport) {
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
+    /*if(res_auth.domain!="delhivery.com")
+                    next(new Error("Invalid login"));*/
 
     // if user is authenticated in the session, carry on
     if (req.isAuthenticated())
